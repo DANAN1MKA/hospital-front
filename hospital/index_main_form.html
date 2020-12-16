@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Vue.js-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!--Jquery.axios-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+        <meta charset="utf-8">
+        <meta name="viewport">
+        <link rel="stylesheet" href="app.css">
+        <title>VueJS</title>
+
+    </head>
+    <body>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light border fixed-top">
+                    <div class="col-lg-1"></div>
+                        <div class="col-lg-3">
+                            <label class="ml-5">Лечулюдей Иосиф Абрамович</label>
+                        </div>
+
+                    <div class="col-lg-6"></div>
+
+                    <div class="col-lg-1">
+                        <button type="submit" class="btn btn-danger w-100">Назад</button>
+                    </div>
+            </nav>
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-lg-10" id="table">
+                
+                <table class="table table-hover border mt-3">
+                    <thead>
+                        <tr>
+                            <th>ФИО</th>
+                            <th>Диагноз</th>
+                            <th>Лечащий врач</th>
+                            <th>Дата обращения</th>
+                            <th>Дата выписки</th>
+                            <th>Палата</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Черемячкин Олег Викторович</th>
+                            <td>Шизофрения</td>
+                            <td>Лечи А.Н.</td>
+                            <td>17.04.2019</td>
+                            <td>-</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Черемячкин Олег Викторович</th>
+                            <td>Психоз</td>
+                            <td>Лечи А.Н.</td>
+                            <td>2.02.2019</td>
+                            <td>2.03.2019</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Черемячкин Олег Викторович</th>
+                            <td>Белая горячка</td>
+                            <td>Лечи А.Н.</td>
+                            <td>17.04.2020</td>
+                            <td>2.05.2020</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+
+            <div class="col-lg-2" id="filtration">
+                <div class="container mt-4" id="filtration">
+                    <h3 class="text-center mb-4">Сортировка</h3>
+
+                    <div class="form-groupe mt-3">                   
+                        <label for="search">ФИО пациента:</label>                  
+                        <input type="text" class="form-control" id="login_inp" placeholder="Иванов Иван Иваныч">
+                    </div>
+
+                    <div class="form-groupe mt-3">
+                        <label for="search">Лечащий врач:</label>
+                        <input type="text" class="form-control" id="pass_inp" placeholder="Фамилия Имя Отчество">
+                    </div>
+
+                    
+                    <div class="row mt-3">
+                        <label for="ward">Номер палаты:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="ward" placeholder="13">
+                            <div class="input-group-append">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Палата</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">1</a>
+                                        <a class="dropdown-item" href="#">2</a>
+                                        <a class="dropdown-item" href="#">3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-groupe mt-3"> 
+                        <label for="date">Дата обращения:</label>
+                        <input type="date" class="form-control" id="date" placeholder="Дата">
+                    </div>
+
+                    <div class="form-groupe mt-3"> 
+                        <label for="date">Дата выписки:</label>
+                        <input type="date" class="form-control" id="date" placeholder="Дата">
+                    </div>
+
+                    <div class="form-groupe mt-3">                   
+                        <label for="search">Диагноз:</label>                  
+                        <input type="text" class="form-control" id="login_inp" placeholder="Диагноз">
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-lg-6"></div>
+
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn btn-primary w-100 ">Применить</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row fixed-bottom mb-3">           
+            <div class="col-lg-10"></div>
+            <div class="col-lg-2">
+                <div class="col-lg-9">
+                    <button type="submit" class="btn btn-primary w-100">Добавить пациента</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
